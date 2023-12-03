@@ -98,7 +98,7 @@ def parse_string(input_string):
         print(parsed_data)
         sdk_info = ''
         if(parsed_data['api_flavour']) == 'nga':
-            order_info = "This order was created using Next Gen API "
+            order_info = "This order was created using Next Gen API   \n"
 
         if(parsed_data['sdk'])  in sdk_map:
             order_info = order_info + ' and processed using '+ sdk_map[parsed_data['sdk']]
@@ -119,10 +119,9 @@ def parse_string(input_string):
             browser_version = "-Version:"+ parsed_data['browser_version']
         if parsed_data['os_info'] in os_type_map and parsed_data['os_version'].isnumeric():
                 os_version = " Version: "+ parsed_data['os_version']
-        order_info = (order_info + "  \n "+sdk_info + sdk_version + "  \n" +os_type_map[parsed_data['os_info'] ]
+        st.write(order_info+ sdk_info + sdk_version + "  \n" +os_type_map[parsed_data['os_info'] ]
                         + device_map[parsed_data['device_type']] + os_version + "  \n" +
                       browser_info + browser_version)
-        st.write(order_info)
         return parsed_data
     else:
         return None
