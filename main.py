@@ -50,24 +50,24 @@ sdk_flavour_map = {
 
 
 browser_map = {
-    'c': " on Chrome Browser",
-    's': " on Safari Browser",
-    'm': " on Mozilla Browser",
-    'o': " on Opera Browser",
-    'w': " on Android Webview",
-    'k': " on IOS Webview",
-    'b': " on Brave Browser",
-    'i': " on Internet Explorer",
-    'g': " on Samsung Browser",
-    'u': " on UC Browser"
+    'c': " with Chrome Browser",
+    's': " with Safari Browser",
+    'm': " with Mozilla Browser",
+    'o': " with Opera Browser",
+    'w': " with Android Webview",
+    'k': " with IOS Webview",
+    'b': " with Brave Browser",
+    'i': " with Internet Explorer",
+    'g': " with Samsung Browser",
+    'u': " with UC Browser"
 }
 
 os_type_map = {
-    'a': " using Android ",
-    'i': " using IOS ",
-    'w': " using Windows ",
-    'm': " using Mac ",
-    'l': " using Linux OS "
+    'a': " on Android ",
+    'i': " on IOS ",
+    'w': " on Windows ",
+    'm': " on Mac ",
+    'l': " on Linux OS "
 }
 def parse_string(input_string):
     pattern = r'(\w+)-(\w+)-(\w+)-([\w.]+)-([\w.]+)-(\w+)-(\w+)-([\w.]+)-(\w+)-([\w.]+)'
@@ -119,8 +119,8 @@ def parse_string(input_string):
             browser_version = "-Version:"+ parsed_data['browser_version']
         if parsed_data['os_info'] in os_type_map and parsed_data['os_version'].isnumeric():
                 os_version = " Version: "+ parsed_data['os_version']
-        order_info = (order_info + sdk_info + sdk_version + os_type_map[parsed_data['os_info'] ]
-                       + device_map[parsed_data['device_type']] + os_version +
+        order_info = (order_info + "\n "+sdk_info + sdk_version + "\n" +os_type_map[parsed_data['os_info'] ]
+                        + device_map[parsed_data['device_type']] + os_version + "\n" +
                       browser_info + browser_version)
         st.write(order_info)
         return parsed_data
@@ -134,7 +134,8 @@ if __name__ == '__main__':
 
     # Subheader
     st.subheader("PGapps understand that Order Source is complex, So we have built this for you.")
-    st.write("Here are Few Sources to try:! \n nga-aflt-d-2.0.5-2.0.8-m-w-107xx-a-33  \n nga-andx-i-2.0.5-x-m-w-114xx-a-29   \n  nga-jswc-d-4.4.7-7.9.0-m-c-118.0-a-10xxx")
+    st.write("Here are Few Sources to try:!")
+    st.write("\n nga-aflt-d-2.0.5-2.0.8-m-w-107xx-a-33  \n nga-andx-i-2.0.5-x-m-w-114xx-a-29   \n  nga-jswc-d-4.4.7-7.9.0-m-c-118.0-a-10xxx")
 
 
 
