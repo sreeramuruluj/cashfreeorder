@@ -134,6 +134,10 @@ if __name__ == '__main__':
 
     # Subheader
     st.subheader("PGapps understand that Order Source is complex, So we have built this for you.")
+    st.write("Here are Few Sources to try:! \n nga-aflt-d-2.0.5-2.0.8-m-w-107xx-a-33  \n nga-andx-i-2.0.5-x-m-w-114xx-a-29   \n  nga-jswc-d-4.4.7-7.9.0-m-c-118.0-a-10xxx")
+
+
+
     order_source = st.text_input("Enter the Order Source here")
     if st.button('Decipher'):
         parse_string(order_source)
